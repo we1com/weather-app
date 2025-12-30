@@ -1,0 +1,85 @@
+/* Жалпы стильдер */
+body {
+    background: #1e272e;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: linear-gradient(135deg, #0fbcf9, #3498db);
+    color: white;
+    padding: 40px;
+    border-radius: 25px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+h2 { margin-bottom: 20px; font-size: 28px; }
+
+/* Іздеу бөлімі */
+.search-box {
+    display: flex;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: none;
+    background: #2c3e50;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.search-box button:hover { background: #1a252f; }
+
+/* Тез таңдау батырмалары */
+.quick-cities button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid white;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quick-cities button:hover { background: white; color: #3498db; }
+
+/* Мәлімет шығатын қорапша */
+.summary-box {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    border-left: 5px solid white;
+}
+
+.back-link {
+    color: #eee;
+    display: inline-block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.back-link:hover { text-decoration: underline; }

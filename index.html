@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>Ауа райын іздеу</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h2>Қаланы іздеу</h2>
+        
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Қала атын жазыңыз (Almaty, Astana...)" spellcheck="false">
+            <button id="searchBtn">Іздеу</button>
+        </div>
+
+        <p>Немесе дайын қаланы таңдаңыз:</p>
+        <div class="quick-cities">
+            <button onclick="goToWeather('Almaty')">Алматы</button>
+            <button onclick="goToWeather('Astana')">Астана</button>
+            <button onclick="goToWeather('Shymkent')">Шымкент</button>
+        </div>
+    </div>
+
+    <script>
+        const cityInput = document.getElementById('cityInput');
+        const searchBtn = document.getElementById('searchBtn');
+
+        // Екінші бетке өту функциясы
+        function goToWeather(city) {
+            if (city.trim() !== "") {
+                window.location.href = `weather.html?city=${city}`;
+            } else {
+                alert("Қала атын енгізіңіз!");
+            }
+        }
+
+        // Батырманы басқанда
+        searchBtn.addEventListener('click', () => {
+            goToWeather(cityInput.value);
+        });
+
+        // Enter басса да іздейтін қылу
+        cityInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                goToWeather(cityInput.value);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>Ауа райы нәтижесі</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <a href="index.html" style="color: white; text-decoration: none; font-size: 14px;">← Артқа қайту</a>
+        <h2 id="cityNameDisplay">Жүктелуде...</h2>
+        
+        <div class="summary-box">
+            <p id="weatherText">Іздестірілуде...</p>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const city = urlParams.get('city');
+
+        // БІЗДІҢ МӘЛІМЕТТЕР ҚОРЫ (API-сіз)
+        const weatherData = {
+            'almaty': "2 градус, күн ашық, қар күтілуде",
+            'astana': "-15 градус, боран соғып тұр, өте суық",
+            'shymkent': "10 градус, күн жылы, жаңбыр жаууы мүмкін",
+            'karaganda': "-10 градус, бұлтты, желді"
+        };
+
+        const cityNames = {
+            'almaty': "Алматы",
+            'astana': "Астана",
+            'shymkent': "Шымкент",
+            'karaganda': "Қарағанды"
+        };
+
+        if (city) {
+            const lowCity = city.toLowerCase().trim(); // Кіші әріппен тексеру
+
+            if (weatherData[lowCity]) {
+                document.getElementById('cityNameDisplay').innerText = cityNames[lowCity];
+                document.getElementById('weatherText').innerText = weatherData[lowCity];
+            } else {
+                document.getElementById('cityNameDisplay').innerText = "Табылмады";
+                document.getElementById('weatherText').innerText = `Кешіріңіз, "${city}" қаласы туралы мәлімет базада жоқ.`;
+            }
+        }
+    </script>
+</body>
+</html>
